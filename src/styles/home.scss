@@ -1,0 +1,158 @@
+.App{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        width: 24.5%;
+        min-width: 25rem;
+        height: 50rem;
+        border-radius: 70px;
+        overflow:hidden;
+        position: relative;
+        display: flex;
+        padding: 3rem;
+        box-sizing: border-box;
+        flex-direction: column;
+        user-select: none;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50rem;
+            background:url("../images/phone.png");
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: 100% 50rem;
+        }
+
+        .title{
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#fff;
+            border-bottom: 1px solid #eee;
+            user-select: none;
+
+            h3{
+                font-family: 'Roboto',sans-serif;
+                font-weight: 300;
+                margin: 0;
+                color: #4a4a4a;
+              
+            }
+        }
+
+        .question-area{
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            border:1px solid #eee;
+            border-radius: 10px;
+            padding: 1rem;
+            box-sizing: border-box;
+            margin-top: 2rem;
+            user-select: none;
+            p{
+                font-family: 'Roboto',sans-serif;
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                color: #4a4a4a;
+            }
+        }
+
+        .answers{
+            width: 100%;
+            height: auto;
+            margin-top: 2rem;
+
+            .cards{
+                width: 100%;
+                height: auto;
+
+
+                .card{
+                    width: 100%;
+                    min-height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    border-bottom: 1px solid #eee;
+                    transition: 500ms;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 10;
+                    padding-left: 0.5rem;
+                    box-sizing: border-box;
+                    margin-bottom: 0.5rem;
+                    
+                    p{
+                        font-family: 'Roboto',sans-serif;
+                        font-size: 0.9rem;
+                        color: #4a4a4a;
+                        
+                    }
+
+                    &:hover{
+                        background-color: #b54dd4;
+                        border-radius: 0.5rem;
+                        p{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .timer{
+            width: 100%;
+            height: 50px;
+            margin-top: 2rem;
+            
+            .percent{
+                width: 100%;
+                height: 20px;
+                border-radius: 10px;
+                overflow:hidden;
+                background-color: #eee;
+
+                .percent-bar{
+                    width: 20%;
+                    height: 20px;
+                    background-color: #ec5656;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+
+                    span{
+                        font-family: 'Roboto',sans-serif;
+                        font-size: 0.76rem;
+                    }
+                }
+            }
+        }
+
+        .information{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            span{
+                font-family: 'Roboto',sans-serif;
+                font-size: 2rem;
+                font-weight: 200;
+                color: #4a4a4a;
+            }
+        }
+    }
+}

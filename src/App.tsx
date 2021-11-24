@@ -14,12 +14,13 @@ const App: React.FC = () => {
 
   const [data, setData] = useState<Pokedex[]>([]);
   const [nextQuestion, setNextQuestion] = useState<number>(0);
-  const [question, setQuestion] = useState<ResultType>({});
+  const [question, setQuestion] = useState<Result>();
   const [isData, setIsData] = useState<boolean>(false);
   useEffect(() => {
     axios.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple").then(response => {
       setData(response.data);
       setQuestion(data[nextQuestion]);
+      console.log(response.data);
     })
   }, []);
 
