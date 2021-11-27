@@ -1,5 +1,14 @@
-.App{
+
+.app-container{
     width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App{
+    width: 30%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -66,6 +75,12 @@
                 line-height: 1.4rem;
                 color: #4a4a4a;
             }
+
+            p.category{
+                font-size: 0.7rem;
+                position: absolute;
+                top: 7rem;
+            }
         }
 
         .answers{
@@ -107,6 +122,14 @@
                             color: #fff;
                         }
                     }
+
+                    button{
+                        background-color: transparent;
+                        border: 0;
+                        outline: none;
+                        text-align: left;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -146,6 +169,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 3rem;
 
             span{
                 font-family: 'Roboto',sans-serif;
@@ -154,5 +178,74 @@
                 color: #4a4a4a;
             }
         }
+    }
+
+
+    .animation-area{
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        z-index: 20;
+
+        iframe{
+            width: 400px;
+            height: 400px;
+            border: 0;
+
+            &:hover{
+                user-select: none;
+            }
+        }
+    }
+
+    .gameover{
+        width: 85%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 1.9rem;
+        top: 8rem;
+        z-index: 50;
+        background-color: #fff;
+
+        button{
+            width: 15rem;
+            height: 3.2rem;
+            border-radius: 10px;
+            border:0;
+            background-color: #f2f2f2;
+            color: #4a4a4a;
+            box-shadow: 0 2px 10px #eee;
+            border:1px solid #eee;
+            font-weight: 200;
+            font-family: 'Roboto',sans-serif;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.iphone{
+    width: 75%;
+    position: absolute;
+    bottom: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:after{
+        content: "";
+        width: 40%;
+        height: 6px;
+        border-radius: 15px;
+        background-color: #000;
+        opacity: 0.8;
     }
 }

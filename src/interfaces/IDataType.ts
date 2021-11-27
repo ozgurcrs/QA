@@ -3,6 +3,7 @@ export interface Pokedex {
     results: Result[];
 }
 
+
 export interface Result {
     category: string;
     type: Type;
@@ -10,7 +11,9 @@ export interface Result {
     question: string;
     correct_answer: string;
     incorrect_answers: string[];
+    totalOption: string[]
 }
+
 
 export enum Difficulty {
     Easy = "easy",

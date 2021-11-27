@@ -1,10 +1,14 @@
 import React from 'react'
 
+type alertType = {
+    questionNumber: number
+}
 
-const Alert = () => {
+
+const Alert: React.FC<alertType> = ({ questionNumber }) => {
     return (
         <div className="information">
-            <span>1/10</span>
+            <span>{questionNumber}/10</span>
         </div>
     )
 }
