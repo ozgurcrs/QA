@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 import axios from 'axios';
 import { Result } from './interfaces/IDataType'
 import Button from './components/Custom/Button'
-import { defaultFailOptions, defaultOptions, defaultTryAgainOptions } from './lotties/lottieConfig'
+import { defaultConfettiOptions, defaultFailOptions, defaultOptions } from './lotties/lottieConfig'
 
 
 const App: React.FC = () => {
@@ -14,17 +14,19 @@ const App: React.FC = () => {
   const [data, setData] = useState<Result[]>([]);
   const [nextQuestion, setNextQuestion] = useState<number>(0);
   const [question, setQuestion] = useState<Result>();
+  const [totalCorrect, setTotalCorrect] = useState<number>(0);
   const [successAnimation, setSuccessAnimation] = useState<boolean>(false);
   const [failAnimation, setFailAnimation] = useState<boolean>(false);
 
 
   const callback = (selectedAnswer: string, correctAnswer: string) => {
-    if (correctAnswer == selectedAnswer) {
+    if (correctAnswer === selectedAnswer) {
       setSuccessAnimation(true);
       setTimeout(() => {
         setSuccessAnimation(false);
         setNextQuestion((number => number + 1))
         setQuestion(data[nextQuestion]);
+        setTotalCorrect(number => number + 1);
       }, 2500)
     }
     else {
@@ -78,10 +80,18 @@ const App: React.FC = () => {
       {
         nextQuestion > 9 ? <div className="gameover">
           <Lottie
-            options={defaultTryAgainOptions}
-            height={200}
-            width={200}
+            options={defaultConfettiOptions}
+            height={700}
+            width={350}
           />
+          <div className="finish">
+            <h5>
+              True: <span>{totalCorrect}</span>
+            </h5>
+            <h5>
+              False: <span className="false">{10 - totalCorrect}</span>
+            </h5>
+          </div>
           <Button textArea={"Try Again"} onClick={() => window.location.reload()} />
         </div> : null
       }

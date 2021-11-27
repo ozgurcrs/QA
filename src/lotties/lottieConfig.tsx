@@ -2,6 +2,7 @@ import animationData from '../lotties/success.json';
 import tryAgainData from '../lotties/try-again.json';
 import loadingData from '../lotties/loading.json';
 import failData from '../lotties/error.json';
+import confettiData from '../lotties/confetti.json';
 
 export const defaultOptions = {
     loop: false,
@@ -32,6 +33,15 @@ export const defaultLoadingOptions = {
     loop: true,
     autoplay: true,
     animationData: loadingData,
+    rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+    }
+};
+
+export const defaultConfettiOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: confettiData,
     rendererSettings: {
         preserveAspectRatio: "xMidYMid slice"
     }
